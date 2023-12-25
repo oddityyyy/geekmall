@@ -1,0 +1,134 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+#        - id: baidu_route
+#          uri: https://www.baidu.com
+#          predicates:
+#            - Query=url, baidu
+#
+#        - id: qq_route
+#          uri: https://www.qq.com
+#          predicates:
+#            - Query=url, qq
+
+        - id: coupon_route
+          uri: lb://geekmall-coupon
+          predicates:
+            - Path=/api/coupon/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: ware_route
+          uri: lb://geekmall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: member_route
+          uri: lb://geekmall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: product_route
+          uri: lb://geekmall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: third_party_route
+          uri: lb://geekmall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+
+        - id: geekmall_host_route_external
+          uri: lb://geekmall-product
+          predicates:
+            - Host=tomcat-top-marten.ngrok-free.app, item.tomcat-top-marten.ngrok-free.app
+
+        - id: geekmall_host_route
+          uri: lb://geekmall-product
+          predicates:
+            - Host=geekmall.com, item.geekmall.com
+
+
+        - id: geekmall_search_route_external
+          uri: lb://geekmall-search
+          predicates:
+            - Host=search.tomcat-top-marten.ngrok-free.app
+
+        - id: geekmall_search_route
+          uri: lb://geekmall-search
+          predicates:
+            - Host=search.geekmall.com
+
+
+        - id: geekmall_auth_route_external
+          uri: lb://geekmall-auth-server
+          predicates:
+            - Host=auth.tomcat-top-marten.ngrok-free.app
+
+        - id: geekmall_auth_route
+          uri: lb://geekmall-auth-server
+          predicates:
+            - Host=auth.geekmall.com
+
+
+        - id: geekmall_cart_route_external
+          uri: lb://geekmall-cart
+          predicates:
+            - Host=cart.tomcat-top-marten.ngrok-free.app
+
+        - id: geekmall_cart_route
+          uri: lb://geekmall-cart
+          predicates:
+            - Host=cart.geekmall.com
+
+
+        - id: geekmall_order_route_external
+          uri: lb://geekmall-order
+          predicates:
+            - Host=order.tomcat-top-marten.ngrok-free.app
+
+        - id: geekmall_order_route
+          uri: lb://geekmall-order
+          predicates:
+            - Host=order.geekmall.com
+
+
+        - id: geekmall_member_route_external
+          uri: lb://geekmall-member
+          predicates:
+            - Host=member.tomcat-top-marten.ngrok-free.app
+
+        - id: geekmall_member_route
+          uri: lb://geekmall-member
+          predicates:
+            - Host=member.geekmall.com
+
+
+        - id: geekmall_seckill_route_external
+          uri: lb://geekmall-seckill
+          predicates:
+            - Host=seckill.tomcat-top-marten.ngrok-free.app
+
+        - id: geekmall_seckill_route
+          uri: lb://geekmall-seckill
+          predicates:
+            - Host=seckill.geekmall.com
+
+## 前端项目发过来的访问动态请求加 /api

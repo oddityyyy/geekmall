@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  alicloud:
+    sms:
+      host: https://gyytz.market.alicloudapi.com
+      path: /sms/smsSend
+      skin: a09602b817fd47e59e7c6e603d3f088d
+      sign: 2e65b1bb3d054466b82f0c9d125465e2
+      appcode: 7066da9ddde146f98b94db14b8b09cb7
+
+  application:
+    name: geekmall-third-party
+
+alibaba:
+  cloud:
+    access-key: LTAI5tFSj2cvfGrwm919TrJ2
+    secret-key: 5ggwHUfpsgro1aYgBUAkaV4NQ1DPdz
+    oss:
+      endpoint: oss-cn-chengdu.aliyuncs.com
+      bucket: geekmall-oddity
+
+server:
+  port: 30000
