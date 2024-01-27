@@ -42,12 +42,12 @@ public class MyMQConfig {
     }
 
     @Bean
-    public Binding orderCreateOrderBinging() {
+    public Binding orderCreateOrderBinding() {
         return new Binding("order.delay.queue", Binding.DestinationType.QUEUE, "order-event-exchange", "order.create.order", null);
     }
 
     @Bean
-    public Binding orderReleaseOrderBinging() {
+    public Binding orderReleaseOrderBinding() {
         return new Binding("order.release.order.queue", Binding.DestinationType.QUEUE, "order-event-exchange", "order.release.order", null);
     }
 

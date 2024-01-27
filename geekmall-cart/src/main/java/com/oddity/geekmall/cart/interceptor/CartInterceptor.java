@@ -32,10 +32,12 @@ public class CartInterceptor implements HandlerInterceptor {
 
         HttpSession session = request.getSession();
         MemberRespVo member = (MemberRespVo) session.getAttribute(AuthServerConstant.LOGIN_USER);
+        // 如果是正式用户则设置id
         if (member != null){
             userInfoTo.setUserId(member.getId());
         }
 
+        // 如果是tempUser则设置key
         Cookie[] cookies = request.getCookies();
         if (cookies != null && cookies.length > 0){
             for (Cookie cookie : cookies) {

@@ -1,4 +1,4 @@
-//PUT /oddity_product
+//PUT /oddity_product 此mapping映射需要手动在kibanna命令行中运行建立
 {
   "mappings": {
     "properties": {
