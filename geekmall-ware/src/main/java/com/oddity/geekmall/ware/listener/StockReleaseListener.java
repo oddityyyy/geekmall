@@ -30,6 +30,7 @@ public class StockReleaseListener {
      * @param to 消息队列里面的实体
      * @param message
      */
+    //普通解锁
     @RabbitHandler
     public void handleStockLockedRelease(StockLockedTo to, Message message, Channel channel) throws IOException {
 
@@ -42,6 +43,7 @@ public class StockReleaseListener {
         }
     }
 
+    //专门为了应对关闭订单延迟的情况
     @RabbitHandler
     public void handleOrderCloseRelease(OrderTo orderTo, Message message, Channel channel) throws IOException {
 
