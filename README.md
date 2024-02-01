@@ -1,4 +1,4 @@
-# oddity
+# geekmall
 
 #### 介绍
 极客商城
@@ -26,4 +26,4 @@
 3.  提交代码
 4.  新建 Pull Request
 
-# geekmall
+
