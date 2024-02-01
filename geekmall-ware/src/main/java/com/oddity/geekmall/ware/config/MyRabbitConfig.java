@@ -78,7 +78,7 @@ public class MyRabbitConfig {
 
     @Bean
     public Binding stockLockedBinding() {
-        return new Binding("stock.delay.queue", Binding.DestinationType.QUEUE, "stock-event-exchange", "order.seckill.order", null);
+        return new Binding("stock.delay.queue", Binding.DestinationType.QUEUE, "stock-event-exchange", "stock.locked", null);
     }
 }
 
