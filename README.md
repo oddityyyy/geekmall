@@ -4,7 +4,7 @@
 极客商城
 
 #### 软件架构
-![img](D:\Java-houduan\程序员城南\程序员城南\Mysql--main\MySQL高级篇\README.md)
+![img](https://github.com/oddityyyy/geekmall/blob/master/img/%E6%9E%81%E5%AE%A2%E5%95%86%E5%9F%8E-%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg)
 
 
 #### 安装教程
